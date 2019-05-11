@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Passtore.RegisterPage"
+             Title="REJESTRACJA">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" Margin="25">
+                <StackLayout>
+                    <Label Text="Passtore" HorizontalTextAlignment="Center" FontSize="50"/>
+                </StackLayout>
+
+                <StackLayout >
+                    <Label Text="Login"/>
+                    <Entry x:Name="loginEntry" />
+                    <Label Text="Hasło"/>
+                    <Entry x:Name="passEntry" IsPassword="True" TextChanged="PassEntry_TextChanged"/>
+                    <Grid x:Name="passGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="0"/>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="1"/>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="2"/>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="3"/>
+                    </Grid>
+                    <Label Text="Powtórz Hasło"/>
+                    <Entry x:Name="passRepeatEntry" IsPassword="True"/>
+                </StackLayout>
+
+                <Button x:Name="registerButton"  Text="Zarejestruj" HorizontalOptions="CenterAndExpand" Clicked="RegisterButton_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

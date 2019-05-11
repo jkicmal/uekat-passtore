@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Passtore.ViewAccountPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" Margin="25">
+                <Label x:Name="applicationLabel" FontSize="30" HorizontalTextAlignment="Center"/>
+                <StackLayout>
+                    <Label Text="Login" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Label x:Name="loginLabel" Style="{StaticResource formTextLabel}"/>
+                    
+                    <Label Text="Hasło" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Label x:Name="passLabel" Style="{StaticResource formTextLabel}"/>
+                    
+                    <Label Text="Email" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Label x:Name="emailLabel" Style="{StaticResource formTextLabel}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0, 20, 0, 0">
+                    <Button x:Name="deleteAccountButton"  Text="USUŃ" HorizontalOptions="CenterAndExpand" Clicked="DeleteAccountButton_Clicked"/>
+                    <Button x:Name="editAccountButton"  Text="EDYTUJ" HorizontalOptions="CenterAndExpand" Clicked="EditAccountButton_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

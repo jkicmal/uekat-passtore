@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Passtore.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" Margin="25">
+                <StackLayout>
+                    <Label Text="Passtore" HorizontalTextAlignment="Center" FontSize="50"/>
+                    <Label Text="bezpieczne miejsce dla twoich haseł" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout >
+                    <Label Text="Login"/>
+                    <Entry x:Name="loginEntry" />
+                    <Label Text="Hasło"/>
+                    <Entry x:Name="passEntry" IsPassword="True" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Switch x:Name="rememberLoginSwitch" Scale="0.6" Toggled="RememberLoginSwitch_Toggled"/>
+                    <Label Text="Zapamiętaj login" VerticalOptions="Center"/>
+                </StackLayout>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="registerButton"  Text="Stwórz Konto" Clicked="RegisterButton_Clicked"/>
+                    <Button x:Name="loginButton" Grid.Column="1" Text="Zaloguj" Clicked="LoginButton_Clicked"/>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

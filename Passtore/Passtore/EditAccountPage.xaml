@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Passtore.EditAccountPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" Margin="25">
+                <StackLayout >
+                    <Label Text="Aplikacja" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Entry x:Name="applicationEntry" Style="{StaticResource formEntry}"/>
+                    <Label Text="Login" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Entry x:Name="loginEntry" Style="{StaticResource formEntry}"/>
+                    <Label Text="Hasło" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Entry x:Name="passEntry" Style="{StaticResource formEntry}" TextChanged="PassEntry_TextChanged"/>
+                    <Button x:Name="generatePassButton" Text="Wygeneruj hasło" Clicked="GeneratePassButton_Clicked"/>
+                    <Grid x:Name="passGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
+                        </Grid.RowDefinitions>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="0"/>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="1"/>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="2"/>
+                        <BoxView Style="{StaticResource passBoxStyle}" Grid.Column="3"/>
+                    </Grid>
+                    <Label Text="Email" Style="{StaticResource formEntryTitleLabel}"/>
+                    <Entry x:Name="emailEntry" Style="{StaticResource formEntry}"/>
+                </StackLayout>
+
+                <Button x:Name="updateAccountButton" Text="AKTUALIZUJ" HorizontalOptions="CenterAndExpand" Clicked="UpdateAccountButton_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
