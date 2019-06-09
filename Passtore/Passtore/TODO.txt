@@ -1,4 +1,0 @@
-﻿Aktualizacja hasła i aktualizacja konta, PassUtils ChangePass(Key, Pass);
-Sprawdzanie jak dobre są hasła
-Sprawdzanie poprawnosci wpisanych przez uzytkownika danych konta (mail, username i haslo)
-Jakaś refaktoryzacja, takie pierdoły

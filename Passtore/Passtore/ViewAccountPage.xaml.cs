@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using Passtore.Database;
 using Passtore.Utils;
 
+// strona wyswietlajaca informacje o danym koncie
 namespace Passtore
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]

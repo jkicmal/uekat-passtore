@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Diagnostics;
-
+﻿using System.Collections.Generic;
 using Passtore.Database;
 using Passtore.Utils;
 using System.Threading.Tasks;
 
+// logowanie i przechowywanie stanu logowania
 namespace Passtore
 {
     public static class LoginSystem
@@ -45,32 +42,6 @@ namespace Passtore
         public static void Logout()
         {
             LoggedUser = null;
-        }
-
-        public static async void PerformLoginTest()
-        {
-            User user = new User("Jakubosik");
-
-            if (!UsersManager.CheckIfAlreadyInDB(user))
-            {
-                Debug.WriteLine("Adding User");
-                await UsersManager.AddUser(user, "1234");
-            }
-            else
-            {
-                Debug.WriteLine("User already exists");
-            }
-
-            bool loginSuccess = await LoginSystem.Login(user.Login, "1234");
-
-            if (loginSuccess)
-            {
-                Debug.WriteLine("Successfully logged in");
-            }
-            else
-            {
-                Debug.WriteLine("Wrong Credentials");
-            }
         }
     }
 }

@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
 using System.Diagnostics;
-
 using Passtore.Database;
 
+// ogolne metody ulatwiajace prace z baza danych
 namespace Passtore.Utils
 {
     public static class DBUtils
     {
+        // zwraca poprawną ścieżkę do bazy danych zależną od platformy
         public static string GetPath(string dbName)
         {
             string personalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -30,6 +31,7 @@ namespace Passtore.Utils
             }
         }
 
+        // zwraca ostatnie wpisane id wiersza dla podanej tabeli
         public static int GetLastId<T>(SQLiteConnection conn, string tableName) where T : ISQLiteModel, new()
         {
             List<T> results;
@@ -43,11 +45,12 @@ namespace Passtore.Utils
             }
             catch (SQLiteException e)
             {
-                Debug.WriteLine("VALIDATION ERROR: " + e.ToString());
+                Debug.WriteLine("Couldn't get last id of a database model: " + e.ToString());
                 return -1;
             }
         }
 
+        // zwraca kolejne wolne id dla podenj tabeli
         public static int GetNextId<T>(SQLiteConnection conn, string tableName) where T : ISQLiteModel, new()
         {
             int id = GetLastId<T>(conn, tableName);

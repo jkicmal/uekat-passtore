@@ -1,11 +1,9 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using Xamarin.Forms;
 using Passtore.Utils;
 using System.Diagnostics;
 
+// interakcja z baza danych
 namespace Passtore.Database
 {
     public static class AppDB
@@ -30,9 +28,7 @@ namespace Passtore.Database
 
         public static void CreateDB()
         {
-            
             db = new SQLiteConnection(DBUtils.GetPath(dbName));
-            //db.DropTable<Account>();
             db.CreateTable<User>();
             db.CreateTable<Account>();
         }

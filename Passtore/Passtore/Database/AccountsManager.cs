@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Passtore.Database;
-using Passtore.Utils;
+﻿using Passtore.Utils;
 using Xamarin.Forms;
-
 using System.Threading.Tasks;
 
+// zarzadzenie kontami zapisanymi przez uzytkownikow
 namespace Passtore.Database
 {
     public static class AccountsManager

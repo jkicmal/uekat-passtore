@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using Xamarin.Essentials;
 
+// generowanie, sprawdzanie poprawnosci, zapis, odczyt i modyfikacja hasel
 namespace Passtore.Utils
 {
     public static class PassUtils
@@ -42,6 +43,7 @@ namespace Passtore.Utils
                 throw new ArgumentException("length is too big", "length");
             if (characterSet == null)
                 throw new ArgumentNullException("characterSet");
+
             var characterArray = characterSet.Distinct().ToArray();
             if (characterArray.Length == 0)
                 throw new ArgumentException("characterSet must not be empty", "characterSet");

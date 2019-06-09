@@ -1,9 +1,6 @@
 ﻿using SQLite;
-using SQLiteNetExtensions.Attributes;
-using System.Collections.Generic;
 
-using Passtore.Utils;
-
+// konto zapisane przez uzytkownika
 namespace Passtore.Database
 {
     [Table("accounts")]

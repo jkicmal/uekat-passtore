@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using Passtore.Database;
 
+// strona logowania, pierwsza strona jaka widzi uzytkownik
 namespace Passtore
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -25,7 +19,6 @@ namespace Passtore
             if (Application.Current.Properties.TryGetValue("rememberLoginSwitchState", out rememberLoginSwitchState))
             {
                 rememberLoginSwitch.IsToggled = (bool)rememberLoginSwitchState;
-                Debug.WriteLine("SWITCH STATE WAS READ: " + (bool)rememberLoginSwitchState);
             }
 
             if (Application.Current.Properties.TryGetValue("rememberedLogin", out login))
@@ -33,7 +26,6 @@ namespace Passtore
                 if(rememberLoginSwitch.IsToggled)
                 {
                     loginEntry.Text = (string)login;
-                    Debug.WriteLine("LOGIN WAS READ: " + (string)login);
                 }    
             }
                 
@@ -50,7 +42,6 @@ namespace Passtore
             string pass = passEntry.Text;
 
             User user = new User(login);
-            Debug.WriteLine("LOGIN SWITCH: " + rememberLoginSwitch.IsToggled);
 
             if (UsersManager.CheckIfAlreadyInDB(user))
             {

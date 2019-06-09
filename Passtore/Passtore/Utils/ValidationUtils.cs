@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
+// walidacja formularzy
 namespace Passtore.Utils
 {
     public static class ValidationUtils
